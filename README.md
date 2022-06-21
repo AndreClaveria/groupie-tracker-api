@@ -24,7 +24,7 @@ We have to use a RESTFUL API
 
 ------------------------
 
-![picture](https://git.ytrack.learn.ynov.com/ACLAVERIA/groupie-tracker/raw/branch/master/assets/images/accueil.png)
+![picture](https://raw.githubusercontent.com/AndreClaveria/groupie-tracker-api/master/assets/images/accueil.png)
                                              
 
 
