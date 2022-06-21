@@ -1,0 +1,60 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/style.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="icon" href="../assets/images/image 29.png">
+    <title>Groupie Tinder</title>
+    <!-- Link -->
+
+</head>
+
+
+<body>
+    <section>
+        <div class="containerp">
+            <div class="rowc">
+                <h2 data-aos="fade-down" data-aos-easing="ease-out-cubic" data-aos-duration="3000">Groupie Tinder</h2>
+                <p data-aos="flip-down" data-aos-easing="ease-out-cubic" data-aos-duration="3000">Like or dislike your Artist</p>
+                <!-- connection with other page -->
+                <a href="./indexPage.html">Return</a>
+                <h1 data-aos="flip-up" data-aos-easing="ease-out-cubic" data-aos-duration="3000"slot="header">{{ .Artist.Name }}</h1>
+
+                <div id="app" class="container1">
+                    <card data-aos="zoom-out" data-aos-easing="ease-out-cubic" data-aos-duration="3000"data-image="{{.Artist.Image}}">
+
+                    </card>
+                </div>
+                <!-- recover the information -->
+                <div class="oui">
+                    <form method="POST" action="/tinder.html">
+                        <button data-aos="fade-up-right" data-aos-easing="ease-out-cubic" data-aos-duration="3000"class="dislike" name="id" id="demo" value="id"><img src="../assets/images/dislike.svg" alt="dislike"> </button>
+                    </form>
+                    <form method="POST" action="match.html">
+                        <button data-aos="fade-up-left" data-aos-easing="ease-out-cubic" data-aos-duration="3000"class="like" name="valueId" id="demo" value="{{ .Artist.Id }}" value="Submit"><img src="../assets/images/like.svg" alt="like"> </button>
+                    </form>
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </section>
+    <!-- Link js-->
+
+    <!-- partial -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.0.1/vue.min.js'></script>
+    <!-- <script src="../js/script.js"></script> -->
+    <script src="../js/card.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+
+</body>
+
+</html>

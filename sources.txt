@@ -1,0 +1,42 @@
+For the Html / Css / JS:
+
+https://codepen.io/justjspr/pen/YbXeXq
+https://codepen.io/andymerskin/pen/XNMWvQ
+https://codepen.io/faelplg/pen/MWwxred
+https://freefrontend.com/css-cards/
+https://codepen.io/multum/pen/Mrrrgg
+https://freefrontend.com/css-buttons/
+https://codepen.io/vcomics/pen/djqNrm
+https://www.youtube.com/watch?v=kHWq75Ymw5Q&list=PL9kmVGsnZbLAKw4BcBGNmRfXRbOqoveX3&index=9&ab_channel=LyonYnovCampus
+
+GO:
+
+https://stackoverflow.com/questions/43601359/how-do-i-serve-css-and-js-in-go
+https://medium.com/the-andela-way/build-a-restful-json-api-with-golang-85a83420c9da
+https://gowebexamples.com/
+https://golang.io/fr/actualites/utilisation-des-templates-html-avec-go/
+
+Font:
+
+https://www.dafont.com/fr/transformers-movie.font
+
+Easter Eags:
+
+https://www.youtube.com/watch?v=QtBDL8EiNZo&ab_channel=Rickrollingnoads
+
+Library:
+
+https://michalsnik.github.io/aos/
+
+Icons used and Pictures:
+
+Figma
+Discord
+
+Web host:
+
+Raspberry Pi
+
+Web file sharing:
+
+FileZilla

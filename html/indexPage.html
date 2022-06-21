@@ -1,0 +1,82 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/style.css">
+    <link rel="icon" href="../assets/images/image 29.png">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <title>Groupie Tracker</title>
+    <!-- Link -->
+</head>
+
+<body>
+    <section>
+        <div class="containerp">
+            <div id="filtre">
+                <!-- Link for the change of page-->
+                <a href="./index.html">Return</a>
+                <img src="../assets/images/djnabil.png" alt="djnabil">
+                <img src="../assets/images/djjonathan.png" alt="djjonathan">
+            </div>
+            <div class="navbar">
+                <div class="images">
+                    <img id="burger1" src="../assets/images/burgermenu.svg" alt="burgermenu" onclick="burger()">
+                    <img id="burger2" src="../assets/images/burgermenu2.svg" alt="burgermenu" onclick="burger2()">
+                </div>
+                <!-- Link for the Tinder page-->
+                <div data-aos="fade-down" data-aos-easing="ease-out-cubic" data-aos-duration="3000" id="testbutton"
+                    onclick='window.location.href="./tinder.html"'></div>
+                <form method="POST" action="/showUserPage.html">
+
+                    <label data-aos="fade-down-right" data-aos-easing="ease-out-cubic" data-aos-duration="3000" for="idUserPage"> <img style="margin-right: 2px;"
+                            src="https://discord.com/assets/31abf4145cf7c27ea0e1a2e4328283fd.svg" alt="bas"> Research
+                        your favorite artists <img src="https://discord.com/assets/31abf4145cf7c27ea0e1a2e4328283fd.svg"
+                            alt="bas"></label>
+                    <input data-aos="fade-down-left" data-aos-easing="ease-out-cubic" data-aos-duration="3000"list="choix" name="idUserPage" />
+
+                    <datalist id="choix">
+                        {{range .Users}}
+                        <option value='{{.Id}}'>{{.Name}}</option>
+                        {{end}}
+                    </datalist>
+                </form>
+            </div>
+            <form method="POST" action="/showUserPage.html">
+                <div id="app" class="container1">
+                    <!-- Go import-->
+                    {{range .Users}}
+                    <!-- Post Method to recover the information-->
+
+                    <card data-image="{{.Image}}">
+
+
+                        <button class="view" slot="header" name="idUserPage" value="{{ .Id }}"></button>
+                        <h2 slot="content"> {{.Id}} {{ .Name}}</h2>
+
+
+                        <p slot="content">Date de creation: {{ .CreationDate}}</p>
+
+                    </card>
+
+                    {{end}}
+                </div>
+            </form>
+
+
+        </div>
+    </section>
+
+    <!-- Link js-->
+    <!-- partial -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.0.1/vue.min.js'></script>
+    <!-- <script src="../js/script.js"></script> -->
+    <script src="../js/card.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+</body>
+
+</html>

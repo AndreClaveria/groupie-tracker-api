@@ -1,0 +1,707 @@
+body,
+html {
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    background-color: #8a8a8a;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: unset;
+    font-family: "T";
+}
+
+section {
+    width: 100vw;
+    height: 100vh;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: #828282;
+}
+
+.containerp {
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+    background-color: #dadada;
+}
+ul li{
+    list-style-type: none;
+}
+/* 
++----------------------------------------------------------------------+
+| Scroll Bar
++----------------------------------------------------------------------+
+*/
+::-webkit-scrollbar {
+    width: 8px;
+    background-color: black;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: midnightblue;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: cyan;
+}
+
+::-webkit-scrollbar-button {
+    height: 8px;
+    background-color: midnightblue;
+}
+
+/*------------------------------------------------------------- 
+|
+|fond special
+|
+ ------------------------------------------------------------- */
+canvas {
+    
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    opacity: 1;
+}
+
+
+
+/* 
++----------------------------------------------------------------------+
+| Pour les sélections
++----------------------------------------------------------------------+
+*/
+::-moz-selection {
+    color: midnightblue;
+    background-color: cyan;
+}
+
+::selection {
+    color: midnightblue;
+    background-color: cyan;
+}
+
+/* scroll-behavior: smooth; */
+/*------------------------------------------------------------- 
+|
+|font-face
+|
+ ------------------------------------------------------------- */
+@font-face {
+    font-family: 'T';
+    src: url('./font/Transformers\ Movie.ttf');
+}
+
+/*------------------------------------------------------------- 
+|
+|main
+|
+ ------------------------------------------------------------- */
+
+
+.image {
+    height: 100%;
+    width: 100%;
+
+}
+
+.image div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 15%;
+    z-index: 2;
+}
+
+.image h2 {
+    z-index: 2;
+    color: lightcyan;
+    font-size: 150px;
+    text-shadow: 6px 6px 15px blue, 6px 6px 15px cyan, 0 0 0.2em cyan;
+
+}
+
+.image h2 strong {
+    text-decoration: lightcyan underline 10px;
+}
+
+.image p {
+    z-index: 2;
+    color: lightcyan;
+    font-size: 50px;
+}
+
+.image p a {
+    position: absolute;
+    left: 48%;
+    top: 90%;
+}
+
+
+.image button {
+    z-index: 2;
+}
+
+.presentation {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.presentation p {
+    text-align: center;
+    z-index: 2;
+    color: lightcyan;
+    font-size: 30px;
+    margin: auto 5%;
+    display: flex;
+    flex-direction: column;
+}
+
+.fleche {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 210%;
+    left: 48%;
+
+}
+
+.presentation h3 {
+    text-align: center;
+    z-index: 2;
+    color: lightcyan;
+    font-size: 50px;
+    text-decoration: underline solid lightcyan;
+    text-shadow: 1px 1px 2px red, 0 0 1em blue, 0 0 0.2em blue;
+}
+
+.presentation div {
+    z-index: 2;
+}
+
+.team {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.team p {
+    text-align: center;
+    z-index: 2;
+    color: lightcyan;
+    font-size: 30px;
+    margin: auto 10%;
+}
+
+.team p a {
+    position: absolute;
+    left: 48%;
+    top: 320%;
+}
+.nous{
+    display: flex;
+    justify-content: center;
+}
+.team p strong {
+    text-decoration: underline solid lightcyan;
+
+}
+
+.team h3 {
+    text-align: center;
+    z-index: 2;
+    color: lightcyan;
+    font-size: 50px;
+    text-decoration: underline solid lightcyan;
+    text-shadow: 2px 1px 5px red, 1px 1px 10px blue, 0 0 20px blue;
+}
+
+.team div {
+    z-index: 2;
+}
+
+/*------------------------------------------------------------- 
+|
+|button main
+|
+ ------------------------------------------------------------- */
+.noise_btn {
+    display: block;
+    position: relative;
+    width: 282px;
+    height: 80px;
+    font-weight: 700;
+    line-height: 26px;
+    text-transform: uppercase;
+    letter-spacing: 2.7px;
+    margin: 20px 30px;
+    font-size: 25px;
+    color: #fff;
+    margin-bottom: auto;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.noise_btn.canvas-ready {
+    box-shadow: 6px 6px 40px blue, 6px 6px 50px cyan, 0 0 50px cyan;
+    border-radius: 15px 50px 15px 50px;
+    opacity: 1;
+}
+
+.flex_container {
+    position: absolute;
+    top: 260px;
+
+}
+
+.noise_btn strong {
+    position: absolute;
+    color: lightcyan;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    text-shadow: 6px 6px 15px blue, 6px 6px 15px cyan, 0 0 0.2em cyan;
+    z-index: 2;
+}
+
+.noise-canvas {
+    position: absolute;
+    top: -20px;
+    width: calc(100% + 40px);
+    height: calc(100% + 40px);
+    left: -20px;
+    pointer-events: none;
+    z-index: 2;
+}
+
+/*------------------------------------------------------------- 
+|
+|INDEXPAGE
+|
+ ------------------------------------------------------------- */
+.container1 {
+    padding: 40px 80px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 3%;
+}
+.navbar {
+    width: 100%;
+    height: 10%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: fixed;
+    background-color: black;
+    border-bottom-style: solid;
+    border-width: 4px;
+    border-image: linear-gradient(45deg, #f79533, #f37055, #ef4e7b, #2138e8, #5073b8, #1098ad, #07b39b, #6fba82) 4;
+    z-index: 3;
+}
+
+.navbar .images {
+    display: flex;
+    cursor: pointer;
+    border-style: solid;
+    border-width: 2px;
+    border-image: linear-gradient(45deg, #f79533, #f37055, #ef4e7b, #2138e8, #5073b8, #1098ad, #07b39b, #6fba82) 4;
+    margin-left: 50px;
+}
+
+#burger2 {
+    z-index: -1;
+    position: absolute;
+    opacity: 0;
+}
+
+#filtre {
+    overflow: hidden;
+    overflow-y: scroll;
+    background-color: #111111;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    top: 10%;
+    width: 20%;
+    height: 90%;
+    border-right-style: solid;
+    border-width: 4px;
+    border-image: linear-gradient(45deg, #6fba82, #07b39b, #1098ad, #5073b8, #2138e8, #ef4e7b, #f37055, #f79533) 1;
+    margin-left: -20%;
+}
+
+#filtre a {
+    font-size: 60px;
+    margin-top: 20px;
+    background: -webkit-linear-gradient(45deg, #f79533, #f37055, #ef4e7b, #2138e8, #5073b8, #1098ad, #07b39b, #6fba82);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+#filtre a:hover {
+    filter: contrast(275%) brightness(203%)
+}
+
+#filtre p {
+    color: lightcyan;
+    font-size: 30px;
+}
+
+.view {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    padding: 1000%;
+    cursor: pointer;
+    
+}
+.card-wrap {
+    margin: 10px;
+    transform: perspective(800px);
+    transform-style: preserve-3d;
+    cursor: pointer;
+}
+
+
+.card-wrap:hover .card-info {
+    transform: translateY(0);
+}
+
+.card-wrap:hover .card-info p {
+    opacity: 1;
+}
+
+.card-wrap:hover .card-info,
+.card-wrap:hover .card-info p {
+    transition: 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.card-wrap:hover .card-info:after {
+    transition: 5s cubic-bezier(0.23, 1, 0.32, 1);
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.card-wrap:hover .card-bg {
+    transition: 0.6s cubic-bezier(0.23, 1, 0.32, 1), opacity 5s cubic-bezier(0.23, 1, 0.32, 1);
+    opacity: 0.8;
+}
+
+.card-wrap:hover .card {
+    transition: 0.6s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 2s cubic-bezier(0.23, 1, 0.32, 1);
+    box-shadow:cyan 0 10px 20px 0, inset blue 0 0 0 5px, inset white 0 0 100px 0;
+}
+
+.card {
+    position: relative;
+    flex: 0 0 240px;
+    width: 240px;
+    height: 320px;
+    overflow: hidden;
+    border-radius: 10px;
+    transition: 1s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+    background: linear-gradient(45deg, #f8b26d, #fa9b88, #f28ca9, #6776e8, #849ed3, #5fc2d1, #4ff8e2, #9eedb2);
+}
+
+.card-bg {
+    opacity: 0.5;
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    transition: 1s cubic-bezier(0.445, 0.05, 0.55, 0.95), opacity 5s 1s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+    pointer-events: none;
+}
+
+.card-info {
+    padding: 20px;
+    position: absolute;
+    bottom: 0;
+    color: white;
+    transform: translateY(40%);
+    transition: 0.6s 1.6s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+
+.card-info * {
+    position: relative;
+    z-index: 1;
+}
+
+.card-info:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    background-blend-mode: overlay;
+    opacity: 0;
+    transform: translateY(100%);
+    transition: 5s 1s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+}
+
+
+#testbutton {
+    width: 150px;
+    height: 50px;
+    border-radius: 180px;
+    position: relative;
+    background: linear-gradient(45deg, #f79533, #f37055, #ef4e7b, #2138e8, #5073b8, #1098ad, #07b39b, #6fba82);
+    cursor: pointer;
+    line-height: 12px;
+}
+
+#testbutton:before {
+    content: '';
+    z-index: 1;
+    position: absolute;
+    display: block;
+    width: 80%;
+    height: 70%;
+    top: 15%;
+    left: 10%;
+    transition: 0.3s opacity ease-in-out;
+    filter: blur(15px);
+    opacity: 0;
+    background:linear-gradient(45deg, #f79533, #f37055, #ef4e7b, #2138e8, #5073b8, #1098ad, #07b39b, #6fba82);
+}
+
+#testbutton:hover:before {
+    opacity: 1;
+    transition: 0.3s opacity ease-in-out;
+    filter: blur(25px);
+    background: linear-gradient(45deg, #f79533, #f37055, #ef4e7b, #2138e8, #5073b8, #1098ad, #07b39b, #6fba82);
+}
+
+#testbutton:after {
+    content: 'TINDER !!';
+    text-align: center;
+    line-height: 40px;
+    font-size: 18px;
+    color: rgba(235, 235, 235, 1);
+    font-weight: bold;
+    z-index: 5;
+    position: absolute;
+    display: block;
+    border-radius: 180px;
+    width: 92%;
+    height: 80%;
+    top: 10%;
+    left: 4%;
+    background-color: rgb(19, 20, 22);
+}
+
+/*------------------------------------------------------------- 
+|
+|SHOW USER PAGE + match
+|
+ ------------------------------------------------------------- */
+/*------------------------------------------------------------- 
+|
+|TINDER
+|
+ ------------------------------------------------------------- */
+
+.rowc{
+    background-color: #111111;
+    width: 80%;
+    height: 100%;
+    margin-left: 10%;
+    text-align: center;
+    border-left: solid 1px cyan;
+    border-right: solid 1px cyan;
+    overflow: hidden;
+    color: lightcyan;
+}
+.rowc a{
+    font-size: 20px;
+    background: -webkit-linear-gradient(45deg, #f79533, #f37055, #ef4e7b, #2138e8, #5073b8, #1098ad, #07b39b, #6fba82);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.rowc a:hover{
+    filter: contrast(275%) brightness(203%)
+    
+}
+.rowc h2{
+    z-index: 2;
+    color: lightcyan;
+    font-size: 150px;
+    text-shadow: 6px 6px 15px blue, 6px 6px 15px cyan, 0 0 0.2em cyan;
+}
+.rowc h3{
+    z-index: 2;
+    color: lightcyan;
+    font-size: 100px;
+    text-shadow: 6px 6px 15px blue, 6px 6px 15px cyan, 0 0 0.2em cyan;
+}
+.rowc h1{
+    z-index: 2;
+    color: lightcyan;
+    font-size: 60px;
+    text-shadow: 6px 6px 15px blue, 6px 6px 15px cyan, 0 0 0.2em cyan;
+    text-decoration: underline;
+}
+.rowc p{
+    font-size: 30px;
+}
+.rowc p strong{
+    text-decoration: underline lightcyan;
+}
+.rowc .oui button{
+    cursor: pointer;
+    background: none;
+    border: none;
+}
+.rowc .oui .dislike{
+    position: absolute;
+    top: 70%;
+    left: 35%;
+}
+.rowc .oui .like{
+    position: absolute;
+    top: 70%;
+    left: 60%;
+}
+.album{
+    position: absolute;
+    top: 35%;
+    left: 60%;
+}
+.membres{
+    position: absolute;
+    top: 45%;
+    left: 25%;
+    width: 250px;
+    height: 20%;
+    overflow-y: scroll;
+}
+.date{
+    position: absolute;
+    top: 35%;
+    left: 25%;
+}
+
+.concert{
+    position: absolute;
+    top:45%;
+    left: 55%;
+    width: 500px;
+    height: 40%;
+    overflow-y: scroll;
+    font-size: 30px;
+
+}
+label{
+    display: flex;
+    background: -webkit-linear-gradient(45deg, #f79533, #f37055, #ef4e7b, #2138e8, #5073b8, #1098ad, #07b39b, #6fba82);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 20px;
+}
+label img{
+    margin-left: 5px;
+    width: 25px;
+}
+input{
+    text-align: center;
+    height: 20px;
+    width: 312px;
+    margin-left: 28px;
+}
+/*------------------------------------------------------------- 
+|
+|Responsive
+|
+ ------------------------------------------------------------- */
+
+@media (max-width: 768px) {
+    canvas{
+        opacity: 0;
+        background-color: black;
+
+    }
+    .container{
+        opacity: 0;
+
+    }
+    .containerp{
+        opacity: 0;
+
+    }
+    .container1{
+        opacity: 0;
+
+    }
+    div{
+        opacity: 0;
+    }
+    section{
+        opacity: 0;
+    }
+    body{
+        background-color: black;
+        background-image: url('./images/like.svg');
+    }
+    *{
+        background-color: black;
+    }
+
+}
+@media (orientation:landscape) and (max-width: 850px) {
+    canvas{
+        opacity: 0;
+        background-color: black;
+
+    }
+    .container{
+        opacity: 0;
+
+    }
+    .containerp{
+        opacity: 0;
+
+    }
+    .container1{
+        opacity: 0;
+
+    }
+    div{
+        opacity: 0;
+    }
+    section{
+        opacity: 0;
+    }
+    body{
+        background-color: black;
+        background-image: url('./images/like.svg');
+    }
+    *{
+        background-color: black;
+    }
+    
+}

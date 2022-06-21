@@ -1,0 +1,75 @@
+<html>
+
+<head>
+
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/style.css">
+    <link rel="icon" href="../assets/images/image 29.png">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <title>Groupie Tracker</title>
+    <!-- Link -->
+
+</head>
+
+<body>
+    <!-- Same as match.html, only the h3 is different -->
+    <section>
+        <div class="containerp">
+            <div class="rowc">
+                <h3 data-aos="fade-down" data-aos-easing="ease-out-cubic" data-aos-duration="3000">The Artist you choose
+                </h3>
+                <br />
+                <br />
+                <h1 data-aos="flip-down" data-aos-easing="ease-out-cubic" data-aos-duration="3000">{{ .Artist.Name }}
+                </h1>
+                <a data-aos="flip-down" data-aos-easing="ease-out-cubic" data-aos-duration="3000"
+                    href="./indexPage.html">Return</a>
+                <div id="app" class="container1">
+                    <card data-aos="flip-down" data-aos-easing="ease-out-cubic" data-aos-duration="3000"
+                        data-image="{{.Artist.Image}}">
+                    </card>
+
+                </div>
+                <p data-aos="fade-down-right" data-aos-easing="ease-out-cubic" data-aos-duration="3000" class="date">
+                    <img style="width: 25px;" src="https://discord.com/assets/658d047ef378c3147a9d8d3a01fef268.svg"
+                        alt=""> <strong>Creation Date :</strong> {{ .Artist.CreationDate }}</p>
+                <p data-aos="fade-up-right" data-aos-easing="ease-out-cubic" data-aos-duration="3000" class="membres">
+                    <img style="width: 25px;" src="https://discord.com/assets/b5a892d37d598e0e73dce83212ad8512.svg"
+                        alt=""> <strong>Members : </strong>{{ .Artist.Members }}</p>
+                <p data-aos="fade-down-left" data-aos-easing="ease-out-cubic" data-aos-duration="3000" class="album">
+                    <img style="width: 25px;" src="https://discord.com/assets/1a681bfe61f09a5f527efb25cbbd1a37.svg"
+                        alt="mic"> <strong>FirstAlbum :</strong> {{.Artist.FirstAlbum}}</p>
+                <div data-aos="fade-up-left" data-aos-easing="ease-out-cubic" data-aos-duration="3000" class="concert">
+                    {{range $key,$values := .Relations.DatesLocations}}
+                    {{$key}}:</br>
+                    <ul>
+
+                        {{range $index, $value := $values}}
+                        <li> {{$value}} <br /></li>
+                        {{end}}
+
+                    </ul>
+                    <br />
+                    {{end}}
+
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+    <!-- Js Link -->
+    <!-- partial -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.0.1/vue.min.js'></script>
+    <!-- <script src="../js/script.js"></script> -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="../js/card.js"></script>
+    <script>
+        AOS.init();
+    </script>
+</body>
+
+</html>
